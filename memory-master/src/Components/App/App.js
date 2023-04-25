@@ -13,11 +13,12 @@ import SubjectCard from "../SubjectCard/SubjectCard";
 
 const subjectList = ["Computational Thinking", "JavaScript", "Testing", "React.js","APIs", "JS on the DOM", "Node and Express","Databases and SQL", "TypeScript"];
 
+
 function App() {
   return (
     <main>
       <h1>Test</h1>
-      <Form />
+      <Form subjectList={subjectList} />
       {subjectList.map((item)=>{
         return (<SubjectCard subject={item}/>)
       })}
