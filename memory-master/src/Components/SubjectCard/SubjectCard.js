@@ -3,7 +3,7 @@
 
 
 function SubjectCard () {
-    return ()
+    return (<div className="Subject-Card-div"></div>)
 }
 
 

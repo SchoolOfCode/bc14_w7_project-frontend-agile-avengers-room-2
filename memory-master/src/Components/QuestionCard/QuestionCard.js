@@ -2,7 +2,7 @@
 
 
 function QuestionCard () {
-    return ()
+    return (<div className="Question-Card-div"></div>)
 }
 
 export default QuestionCard
