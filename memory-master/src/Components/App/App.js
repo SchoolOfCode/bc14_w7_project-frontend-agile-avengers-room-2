@@ -11,12 +11,16 @@ import SubjectCard from "../SubjectCard/SubjectCard";
 - They then honestly log if they got the question right (2 points), wrong (0 points), or partly right (1 point).
 */
 
+const subjectList = ["Computational Thinking", "JavaScript", "Testing", "React.js","APIs", "JS on the DOM", "Node and Express","Databases and SQL", "TypeScript"];
+
 function App() {
   return (
     <main>
       <h1>Test</h1>
       <Form />
-      <SubjectCard />
+      {subjectList.map((item)=>{
+        return (<SubjectCard subject={item}/>)
+      })}
       <QuestionCard />
     </main>
   );
