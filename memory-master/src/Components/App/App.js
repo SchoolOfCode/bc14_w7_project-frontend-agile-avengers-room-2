@@ -11,16 +11,40 @@ import SubjectCard from "../SubjectCard/SubjectCard";
 - They then honestly log if they got the question right (2 points), wrong (0 points), or partly right (1 point).
 */
 
-const subjectList = ["Computational Thinking", "JavaScript", "Testing", "React.js","APIs", "JS on the DOM", "Node and Express","Databases and SQL", "TypeScript"];
+const subjectList = [
+  "Computational Thinking",
+  "JavaScript",
+  "Testing",
+  "React.js",
+  "APIs",
+  "JS on the DOM",
+  "Node and Express",
+  "Databases and SQL",
+  "TypeScript",
+];
 
+const questionsAndAnswers = [
+  {
+    key: 1,
+    Subject: "React",
+    Question: "What language do you use to create components in React?",
+    Answer: "JSX",
+  },
+  {
+    key: 2,
+    Subject: "Javascript",
+    Question: "What would the code {} === {} resolve to?",
+    Answer: "Undefined",
+  },
+];
 
 function App() {
   return (
     <main>
       <h1>Test</h1>
       <Form subjectList={subjectList} />
-      {subjectList.map((item)=>{
-        return (<SubjectCard subject={item}/>)
+      {subjectList.map((item) => {
+        return <SubjectCard subject={item} />;
       })}
       <QuestionCard />
     </main>
