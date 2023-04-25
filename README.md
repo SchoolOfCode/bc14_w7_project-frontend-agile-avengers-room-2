@@ -1,16 +1,16 @@
-# frontend-project
+# Memory Master App
 
 # Contents
 
 - [Introduction](#introduction)
 - [Technologies](#technologies)
-- [Planning] (#Planning)
+- [Planning](#planning)
 
 # Introduction
 
-This is a frontend project created using ReactJS. The project is a simple web application that allows user to make Flash cards and filter by the subject of the card. A card can be created, edited, and deleted.
+This is a frontend project created using ReactJS. We made this product to address the issue students faced when it came to active recall and spaced repitition of content they have covered in the School of Code bootcamp.
 
-It includes the following technologies:
+The project is a simple web application that allows user to make Flash cards and filter by the subject of the card. A card can be created and deleted.
 
 # Technologies
 
