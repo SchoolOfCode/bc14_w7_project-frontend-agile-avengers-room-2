@@ -12,7 +12,10 @@ function QuestionCard() {
       <div className="Answer-Div">
         <p className="Answer-P">Answer: 25</p>
         <p className="How-Did-You-Do">How did you do?</p>
-        {/* ToDO: add ratings - thumbs up/thumbs down */}
+
+        <button className="Thumbs-Up"> 👍🏻</button>
+        <button className="Straight-Face"> 😐</button>
+        <button className="Thumbs-Down"> 👎🏻</button>
       </div>
       <button className="Previous-Card-Button">Previous Card</button>
       <button className="Next-Card-Button">Next Card</button>
