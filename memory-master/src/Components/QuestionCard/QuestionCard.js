@@ -5,7 +5,7 @@ function QuestionCard() {
         <p className="Question-P">Question:</p>
         <div className="Subject-And-Answer-Button-Div">
           <p className="Subject">Subject</p>
-          <button className="Answer-Button">Answer</button>
+          <button className="Answer-Button">Reveal Answer</button>
         </div>
       </div>
       <div className="Answer-Div">
