@@ -1,10 +1,16 @@
-function QuestionCard({filteredArray}) {
+import React from "react";
+//import "./QuestionCard.css";
+import { useState } from "react";
+
+function QuestionCard({ filteredArray }) {
+  const [questionNum, setQuestionNum] = useState(0);
+
   console.log(filteredArray);
   let filteredQuestion = "";
   let filteredAnswer = "";
-  if(filteredArray.length !== 0){
-    filteredQuestion = filteredArray[0].Question
-    filteredAnswer = filteredArray[0].Answer
+  if (filteredArray.length !== 0) {
+    filteredQuestion = filteredArray[questionNum].Question;
+    filteredAnswer = filteredArray[questionNum].Answer;
   }
   return (
     <div className="Question-Card-Div">
@@ -24,8 +30,25 @@ function QuestionCard({filteredArray}) {
         <button className="Straight-Face"> 😐</button>
         <button className="Thumbs-Down"> 👎🏻</button>
       </div>
-      <button className="Previous-Card-Button">Previous Card</button>
-      <button className="Next-Card-Button">Next Card</button>
+      <button
+        className="Previous-Card-Button"
+        onClick={() => {
+          questionNum !== 0 && setQuestionNum(questionNum - 1);
+        }}
+      >
+        Previous Card
+      </button>
+
+      <p> </p>
+      <button
+        className="Next-Card-Button"
+        onClick={() => {
+          questionNum !== filteredArray.length - 1 &&
+            setQuestionNum(questionNum + 1);
+        }}
+      >
+        Next Card
+      </button>
     </div>
   );
 }

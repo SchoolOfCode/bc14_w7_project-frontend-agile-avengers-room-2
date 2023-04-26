@@ -39,6 +39,19 @@ const initialQuestionsAndAnswers = [
     Question: "What would the code {} === {} resolve to?",
     Answer: "Undefined",
   },
+
+  {
+    key: 3,
+    Subject: "React.js",
+    Question: "What is a useState?",
+    Answer: "A way to store variables in React",
+  },
+  {
+    key: 4,
+    Subject: "Javascript",
+    Question: "What is an array?",
+    Answer: "stores data",
+  },
 ];
 
 function App() {
