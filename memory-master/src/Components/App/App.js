@@ -50,12 +50,35 @@ function App() {
   // questionsAndAnswers is an array of objects, each object contains a question and answer, unique key, and subject
   const [currentSubject, setCurrentSubject] = useState(""); //currentSubject is a string, which will be the subject of the current card being displayed
   const [numberOfQuestions, setNumberOfQuestions] = useState(0); //May or may require this, as we can potentially find the number of cards in a specified subject using .length or similar methods. But it may be useful to have a count of the number of cards in a subject, so we can display it to the user.
-
+  const [newQuestion, setNewQuestion] = useState("");
+  const [newAnswer, setNewAnswer] = useState("");
+  const [selectedSubject, setSelectedSubject] = useState("");
   //submit button
-  function addObjectButton() {
+  function addObject(subject, question, answer) {
     //gets what is in the text fields and appends to the questionsAndAnswers Array
+    // To capture what is in the text field and the drop down
+    // create state variables, question answer and subject ✅
+    // store question answer and subject onChange in the state varibales✅
+    // take the state variables and set a questions and answers array to its self + the new object
+    // The key of the new object will be (array.length + 1)
+    // When the submit button is clicked we want want this function to run which will ...
   }
 
+  function storeQuestionInput(event) {
+    setNewQuestion(event.target.value);
+    console.log(newQuestion);
+  }
+
+  function storeAnswerInput(event) {
+    setNewAnswer(event.target.value);
+    console.log(newAnswer);
+  }
+
+  function storeSubjectInput(event) {
+    console.log(event);
+    setSelectedSubject(event.target.value);
+    console.log(selectedSubject);
+  }
   //Components/PROPS to pass through
   // questionsAndAnswers as this will contains array of objects whith Question, answers, id and subject. SubjectCard component and QuetionCard component [...array]
 
@@ -63,7 +86,12 @@ function App() {
   return (
     <main>
       <h1>Memory Masters</h1>
-      <Form subjectList={subjectList} />
+      <Form
+        subjectList={subjectList}
+        storeQuestionInput={storeQuestionInput}
+        storeAnswerInput={storeAnswerInput}
+        storeSubjectInput={storeSubjectInput}
+      />
       {subjectList.map((item) => {
         return <SubjectCard subject={item} />;
       })}

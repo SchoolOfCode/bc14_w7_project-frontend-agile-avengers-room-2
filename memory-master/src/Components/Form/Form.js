@@ -1,11 +1,16 @@
-function Form({ subjectList }) {
+function Form({
+  subjectList,
+  storeQuestionInput,
+  storeAnswerInput,
+  storeSubjectInput,
+}) {
   return (
     <div className="Form-div">
       <h3>FlashCard Generator</h3>
       <label>Subject: </label>
-      <select name="cars" id="cars">
+      <select name="Subject" id="Subject" onChange={storeSubjectInput}>
         {subjectList.map((item) => {
-          return <option value="item">{item}</option>;
+          return <option value={item}>{item}</option>;
         })}
       </select>
       <div className="question-answer-container">
@@ -15,6 +20,7 @@ function Form({ subjectList }) {
           style={{ resize: "none" }}
           type="text"
           className="question-input-field"
+          onChange={storeQuestionInput}
         />
 
         {/* Answer - Label and input box */}
@@ -23,6 +29,7 @@ function Form({ subjectList }) {
           style={{ resize: "none" }}
           type="text"
           className="answer-input-field"
+          onChange={storeAnswerInput}
         />
 
         {/* Submit button */}
