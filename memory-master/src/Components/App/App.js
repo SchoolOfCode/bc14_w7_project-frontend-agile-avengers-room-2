@@ -15,7 +15,7 @@ import { useState, useEffect } from "react";
 const subjectList = [
   //hard coded list of subjects
   "Computational Thinking",
-  "JavaScript",
+  "Javascript",
   "Testing",
   "React.js",
   "APIs",
