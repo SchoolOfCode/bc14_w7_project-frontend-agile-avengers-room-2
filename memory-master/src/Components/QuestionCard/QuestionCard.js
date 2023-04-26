@@ -39,7 +39,9 @@ function QuestionCard({ filteredArray }) {
         Previous Card
       </button>
 
-      <p> </p>
+      <p style={{ fontWeight: "bold" }}>
+        {questionNum + 1} / {filteredArray.length}
+      </p>
       <button
         className="Next-Card-Button"
         onClick={() => {
