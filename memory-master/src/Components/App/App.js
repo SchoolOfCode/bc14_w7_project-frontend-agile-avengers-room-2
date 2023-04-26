@@ -2,7 +2,7 @@ import "./App.css";
 import Form from "../Form/Form";
 import QuestionCard from "../QuestionCard/QuestionCard";
 import SubjectCard from "../SubjectCard/SubjectCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 /* Plan for MVP
 - The user will be presented with a form in which they select from a list of hard-coded subjects, in which the subsequent flash cards will be grouped.
@@ -55,13 +55,18 @@ const initialQuestionsAndAnswers = [
 ];
 
 function App() {
+  
   //created state variables
   const [questionsAndAnswers, setQuestionsAndAnswers] = useState(
     initialQuestionsAndAnswers
-  );
-
+    );
+    
+    useEffect(()=>{
+      displayQuestion(currentSubject);
+    }, [questionsAndAnswers])
+    
   // questionsAndAnswers is an array of objects, each object contains a question and answer, unique key, and subject
-  // const [currentSubject, setCurrentSubject] = useState(""); //currentSubject is a string, which will be the subject of the current card being displayed
+  const [currentSubject, setCurrentSubject] = useState(""); //currentSubject is a string, which will be the subject of the current card being displayed
   // const [numberOfQuestions, setNumberOfQuestions] = useState(0); //May or may require this, as we can potentially find the number of cards in a specified subject using .length or similar methods. But it may be useful to have a count of the number of cards in a subject, so we can display it to the user.
   const [newQuestion, setNewQuestion] = useState("");
   const [newAnswer, setNewAnswer] = useState("");
@@ -133,7 +138,7 @@ function App() {
     // setFilteredArray(newFilteredArray);
 
     //Now, run displayQuestion(subject) again.
-    displayQuestion(subject);
+    // displayQuestion(subject);
   }
 
   //Components/PROPS to pass through
@@ -171,7 +176,7 @@ function App() {
         }}
       />
       {subjectList.map((item) => {
-        return <SubjectCard subject={item} displayQuestion={displayQuestion} />;
+        return <SubjectCard setCurrentSubject={setCurrentSubject} subject={item} displayQuestion={displayQuestion} />;
       })}
       <QuestionCard filteredArray={filteredArray} deleteObject={deleteObject} />
     </main>

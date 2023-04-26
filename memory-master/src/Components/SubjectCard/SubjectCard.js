@@ -13,10 +13,10 @@
 */
 
 
-function SubjectCard ({subject, displayQuestion}) {
+function SubjectCard ({subject, displayQuestion, setCurrentSubject}) {
     return (
     <div className="Subject-Card-div">
-    <button className="Subject-Button" onClick={()=>{displayQuestion(subject)}}>{subject}</button>
+    <button className="Subject-Button" onClick={()=>{setCurrentSubject(subject); displayQuestion(subject)}}>{subject}</button>
 
     </div>)
 }
