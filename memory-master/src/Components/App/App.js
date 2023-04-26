@@ -115,13 +115,24 @@ function App() {
     // we will declare a new array and use .filter to determin whether the item has that key.
     // if it doesnt have that key then populate the new array
     // set questionsAndAnswers array to new array.
-    console.log(subject)
+    //console.log(subject);
+    console.log("key and subject: ", key, subject);
     let newArray = questionsAndAnswers.filter((item) => item.key !== key);
-    // console.log(newArray);
+    console.log(newArray);
     setQuestionsAndAnswers(newArray);
-    
+
+    //update the state based on the previous state using the updater function
+    // setQuestionsAndAnswers((filteredArray) => {
+    //   return filteredArray.filter((item) => item.key !== key);
+    // });
+    // let newFilteredArray = questionsAndAnswers.filter(
+    //   (item) => item.Subject !== subject
+    // );
+    // console.log("new filtered array ", newFilteredArray);
+    // setFilteredArray(newFilteredArray);
+
     //Now, run displayQuestion(subject) again.
-    displayQuestion(subject)
+    displayQuestion(subject);
   }
 
   //Components/PROPS to pass through
@@ -132,16 +143,12 @@ function App() {
   function displayQuestion(subject) {
     // We are going to use filter() (questionAndAnswer.filter((item)=>{})) and we will store in a new array variable
     console.log(subject);
-    console.log(questionsAndAnswers)
+    console.log(questionsAndAnswers);
     setFilteredArray(
-      questionsAndAnswers.filter((item) => {
-        if (item.Subject === subject) {
-          return true;
-        }
-      })
-      
+      questionsAndAnswers.filter((item) => item.Subject === subject)
     );
-    console.log(filteredArray)
+
+    console.log(filteredArray);
     // console.log(filteredArray);
     // return filteredArray;
     // Callback function will return if item.subject === subject

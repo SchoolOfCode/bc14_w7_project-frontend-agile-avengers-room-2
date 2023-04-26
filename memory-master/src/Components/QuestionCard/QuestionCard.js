@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 
 function QuestionCard({ filteredArray, deleteObject }) {
-  console.log(`QuestionCard Rendered`)
+  console.log(`QuestionCard Rendered`);
   const [questionNum, setQuestionNum] = useState(0);
   const [revealAnswer, setRevealAnswer] = useState(false);
 
