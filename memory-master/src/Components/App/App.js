@@ -63,6 +63,8 @@ function App() {
     setQuestionsAndAnswers(newArray)
     // The key of the new object will be (array.length + 1)
     console.log(questionsAndAnswers)
+
+    // Call a function which clears the question and answer text areas.
   }
 
   function storeQuestionInput(event) {
