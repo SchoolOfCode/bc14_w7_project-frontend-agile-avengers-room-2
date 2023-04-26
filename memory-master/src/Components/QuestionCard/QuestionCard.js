@@ -12,12 +12,34 @@ function QuestionCard({ filteredArray, deleteObject }) {
   let filteredAnswer = "";
   let filteredSubject = "";
   let filteredKey = "";
-  if (filteredArray.length !== 0) {
+  if (filteredArray[questionNum] !== undefined) {
+    console.log(`filteredArray is populated.`);
+    console.log(`questionNum is currently ${questionNum}`)
+    console.log(filteredArray)
     filteredQuestion = filteredArray[questionNum].Question;
+    console.log(`filteredQuestion now = ${filteredQuestion}`);
     filteredAnswer = filteredArray[questionNum].Answer;
+    console.log(`filteredAnswer now = ${filteredAnswer}`);
     filteredSubject = filteredArray[questionNum].Subject;
+    console.log(`filteredSubject now = ${filteredSubject}`);
     filteredKey = filteredArray[questionNum].key;
+    console.log(`filteredKey now = ${filteredKey}`)
   }
+
+  function calculateNewQuestionNum(){
+    // After deleting an object, we need to set questionNum to an appropriate number, e.g. itself - 1 (unless we're deleting the first question, which case we can leave the questionNum the way it is).
+    if (questionNum !== 0){
+      setQuestionNum(questionNum-1)
+    }
+    console.log(`questionNumber is now ${questionNum}`)
+    
+    // else {
+    //   setQuestionNum(-1)
+    // }
+
+    // A new problem is that the displayed question number will always be 1 (i.e. when you delete all the questions, the displayed quesion counter will read 1/0 (question 1 out 0)). I think I'll leave this for now.
+  }
+
   return (
     <div className="Question-Card-Div">
       <div className="Question-Div">
@@ -25,7 +47,7 @@ function QuestionCard({ filteredArray, deleteObject }) {
         <button
           className="Delete-Button"
           onClick={() => {
-            deleteObject(filteredKey, filteredSubject);
+            deleteObject(filteredKey, filteredSubject); calculateNewQuestionNum()
           }}
         >
           {" "}
