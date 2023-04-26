@@ -43,7 +43,9 @@ const initialQuestionsAndAnswers = [
 
 function App() {
   //created state variables
-  const [questionsAndAnswers, setQuestionsAndAnswers] = useState(initialQuestionsAndAnswers);
+  const [questionsAndAnswers, setQuestionsAndAnswers] = useState(
+    initialQuestionsAndAnswers
+  );
 
   // questionsAndAnswers is an array of objects, each object contains a question and answer, unique key, and subject
   const [currentSubject, setCurrentSubject] = useState(""); //currentSubject is a string, which will be the subject of the current card being displayed
@@ -60,10 +62,19 @@ function App() {
     // store question answer and subject onChange in the state varibales✅
     // When the submit button is clicked we want want this function to run which will ...
     // take the state variables and set the questions and answers array to its self + the new object
-    const newArray = [...questionsAndAnswers, {key:questionsAndAnswers.length + 1, subject:subject, question:question, answer:answer}]
-    setQuestionsAndAnswers(newArray)
+    const newArray = [
+      ...questionsAndAnswers,
+      {
+        key: questionsAndAnswers.length + 1,
+        Subject: subject,
+        Question: question,
+        Answer: answer,
+      },
+    ];
+
+    setQuestionsAndAnswers(newArray);
     // The key of the new object will be (array.length + 1)
-    console.log(questionsAndAnswers)
+    console.log(questionsAndAnswers);
 
     // To do: Call a function which clears the question and answer text areas.
   }
@@ -89,18 +100,21 @@ function App() {
 
   //toDo: add an answer component
 
-  function displayQuestion(subject){
+  function displayQuestion(subject) {
     // We are going to use filter() (questionAndAnswer.filter((item)=>{})) and we will store in a new array variable
-  console.log(subject);
-   setFilteredArray(questionsAndAnswers.filter((item)=>{
-      if (item.Subject === subject){
-       return true
-      }}));
-      console.log(filteredArray);
+    console.log(subject);
+    setFilteredArray(
+      questionsAndAnswers.filter((item) => {
+        if (item.Subject === subject) {
+          return true;
+        }
+      })
+    );
+    console.log(filteredArray);
     // return filteredArray;
-    // Callback function will return if item.subject === subject 
+    // Callback function will return if item.subject === subject
     // Result should be a filtered questionAndAnswer Array
-    // Return new array and pass to QuestionCard as a prop 
+    // Return new array and pass to QuestionCard as a prop
     // Inside QuestionCard.js we are going to display the first question (index[0])
   }
 
@@ -112,12 +126,14 @@ function App() {
         storeQuestionInput={storeQuestionInput}
         storeAnswerInput={storeAnswerInput}
         storeSubjectInput={storeSubjectInput}
-        addObject={()=>{addObject(selectedSubject, newQuestion, newAnswer)}}
+        addObject={() => {
+          addObject(selectedSubject, newQuestion, newAnswer);
+        }}
       />
       {subjectList.map((item) => {
         return <SubjectCard subject={item} displayQuestion={displayQuestion} />;
       })}
-      <QuestionCard filteredArray={filteredArray}/>
+      <QuestionCard filteredArray={filteredArray} />
     </main>
   );
 }
