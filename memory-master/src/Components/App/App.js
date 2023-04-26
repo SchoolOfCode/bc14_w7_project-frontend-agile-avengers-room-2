@@ -108,6 +108,18 @@ function App() {
     setSelectedSubject(event.target.value);
     console.log(selectedSubject);
   }
+
+  function deleteObject(key) {
+    // when we click the delete button, it deletes the object with that specific key from the questionsAndAnswers array.
+    // this function will take in a key as an input
+    // we will declare a new array and use .filter to determin whether the item has that key.
+    // if it doesnt have that key then populate the new array
+    // set questionsAndAnswers array to new array.
+    let newArray = questionsAndAnswers.filter((item) => item.key !== key);
+    console.log(newArray);
+    setQuestionsAndAnswers(newArray);
+  }
+
   //Components/PROPS to pass through
   // questionsAndAnswers as this will contains array of objects whith Question, answers, id and subject. SubjectCard component and QuetionCard component [...array]
 
@@ -146,7 +158,7 @@ function App() {
       {subjectList.map((item) => {
         return <SubjectCard subject={item} displayQuestion={displayQuestion} />;
       })}
-      <QuestionCard filteredArray={filteredArray} />
+      <QuestionCard filteredArray={filteredArray} deleteObject={deleteObject} />
     </main>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 //import "./QuestionCard.css";
 import { useState } from "react";
 
-function QuestionCard({ filteredArray }) {
+function QuestionCard({ filteredArray, deleteObject }) {
   const [questionNum, setQuestionNum] = useState(0);
   const [revealAnswer, setRevealAnswer] = useState(false);
 
@@ -10,16 +10,26 @@ function QuestionCard({ filteredArray }) {
   let filteredQuestion = "";
   let filteredAnswer = "";
   let filteredSubject = "";
+  let filteredKey = "";
   if (filteredArray.length !== 0) {
     filteredQuestion = filteredArray[questionNum].Question;
     filteredAnswer = filteredArray[questionNum].Answer;
     filteredSubject = filteredArray[questionNum].Subject;
+    filteredKey = filteredArray[questionNum].key;
   }
   return (
     <div className="Question-Card-Div">
       <div className="Question-Div">
         <p className="Question-P">Question: {filteredQuestion}</p>
-        <button className="Delete-Button"> Delete Question</button>
+        <button
+          className="Delete-Button"
+          onClick={() => {
+            deleteObject(filteredKey);
+          }}
+        >
+          {" "}
+          Delete Question
+        </button>
         <div className="Subject-And-Answer-Button-Div">
           <p className="Subject">Subject: {filteredSubject}</p>
 
