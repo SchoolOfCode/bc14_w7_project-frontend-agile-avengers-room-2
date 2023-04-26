@@ -4,13 +4,16 @@ import { useState } from "react";
 
 function QuestionCard({ filteredArray }) {
   const [questionNum, setQuestionNum] = useState(0);
+  const [revealAnswer, setRevealAnswer] = useState(false);
 
   console.log(filteredArray);
   let filteredQuestion = "";
   let filteredAnswer = "";
+  let filteredSubject = "";
   if (filteredArray.length !== 0) {
     filteredQuestion = filteredArray[questionNum].Question;
     filteredAnswer = filteredArray[questionNum].Answer;
+    filteredSubject = filteredArray[questionNum].Subject;
   }
   return (
     <div className="Question-Card-Div">
@@ -18,21 +21,32 @@ function QuestionCard({ filteredArray }) {
         <p className="Question-P">Question: {filteredQuestion}</p>
         <button className="Delete-Button"> Delete Question</button>
         <div className="Subject-And-Answer-Button-Div">
-          <p className="Subject">Subject</p>
-          <button className="Answer-Button">Reveal Answer</button>
+          <p className="Subject">Subject: {filteredSubject}</p>
+
+          <button
+            className="Answer-Button"
+            onClick={() => setRevealAnswer(!revealAnswer)} //toggle to show answer
+          >
+            Reveal Answer
+          </button>
         </div>
       </div>
-      <div className="Answer-Div">
-        <p className="Answer-P">Answer: {filteredAnswer}</p>
-        <p className="How-Did-You-Do">How did you do?</p>
 
-        <button className="Thumbs-Up"> 👍🏻</button>
-        <button className="Straight-Face"> 😐</button>
-        <button className="Thumbs-Down"> 👎🏻</button>
-      </div>
+      {revealAnswer && ( //if revealAnswer is true, show the answer
+        <div className="Answer-Div">
+          <p className="Answer-P">Answer: {filteredAnswer}</p>
+          <p className="How-Did-You-Do">How did you do?</p>
+
+          <button className="Thumbs-Up"> 👍🏻</button>
+          <button className="Straight-Face"> 😐</button>
+          <button className="Thumbs-Down"> 👎🏻</button>
+        </div>
+      )}
+
       <button
         className="Previous-Card-Button"
         onClick={() => {
+          setRevealAnswer(false);
           questionNum !== 0 && setQuestionNum(questionNum - 1);
         }}
       >
@@ -45,6 +59,7 @@ function QuestionCard({ filteredArray }) {
       <button
         className="Next-Card-Button"
         onClick={() => {
+          setRevealAnswer(false);
           questionNum !== filteredArray.length - 1 &&
             setQuestionNum(questionNum + 1);
         }}
