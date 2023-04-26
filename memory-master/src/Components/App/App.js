@@ -109,7 +109,7 @@ function App() {
     console.log(selectedSubject);
   }
 
-  function deleteObject(key) {
+  function deleteObject(key, subject) {
     // when we click the delete button, it deletes the object with that specific key from the questionsAndAnswers array.
     // this function will take in a key as an input
     // we will declare a new array and use .filter to determin whether the item has that key.
@@ -118,6 +118,9 @@ function App() {
     let newArray = questionsAndAnswers.filter((item) => item.key !== key);
     console.log(newArray);
     setQuestionsAndAnswers(newArray);
+    
+    //Now, run displayQuestion(subject) again.
+    displayQuestion(subject)
   }
 
   //Components/PROPS to pass through

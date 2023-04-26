@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 
 function QuestionCard({ filteredArray, deleteObject }) {
+  console.log(`QuestionCard Rendered`)
   const [questionNum, setQuestionNum] = useState(0);
   const [revealAnswer, setRevealAnswer] = useState(false);
 
@@ -24,7 +25,7 @@ function QuestionCard({ filteredArray, deleteObject }) {
         <button
           className="Delete-Button"
           onClick={() => {
-            deleteObject(filteredKey);
+            deleteObject(filteredKey, filteredSubject);
           }}
         >
           {" "}
