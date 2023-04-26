@@ -43,25 +43,26 @@ const initialQuestionsAndAnswers = [
 
 function App() {
   //created state variables
-  const [questionsAndAnswers, setQuestionsAndAnswers] = useState(
-    initialQuestionsAndAnswers
-  );
+  const [questionsAndAnswers, setQuestionsAndAnswers] = useState(initialQuestionsAndAnswers);
 
   // questionsAndAnswers is an array of objects, each object contains a question and answer, unique key, and subject
   const [currentSubject, setCurrentSubject] = useState(""); //currentSubject is a string, which will be the subject of the current card being displayed
   const [numberOfQuestions, setNumberOfQuestions] = useState(0); //May or may require this, as we can potentially find the number of cards in a specified subject using .length or similar methods. But it may be useful to have a count of the number of cards in a subject, so we can display it to the user.
   const [newQuestion, setNewQuestion] = useState("");
   const [newAnswer, setNewAnswer] = useState("");
-  const [selectedSubject, setSelectedSubject] = useState("");
+  const [selectedSubject, setSelectedSubject] = useState(subjectList[0]);
   //submit button
   function addObject(subject, question, answer) {
     //gets what is in the text fields and appends to the questionsAndAnswers Array
     // To capture what is in the text field and the drop down
     // create state variables, question answer and subject ✅
     // store question answer and subject onChange in the state varibales✅
-    // take the state variables and set a questions and answers array to its self + the new object
-    // The key of the new object will be (array.length + 1)
     // When the submit button is clicked we want want this function to run which will ...
+    // take the state variables and set the questions and answers array to its self + the new object
+    const newArray = [...questionsAndAnswers, {key:questionsAndAnswers.length + 1, subject:subject, question:question, answer:answer}]
+    setQuestionsAndAnswers(newArray)
+    // The key of the new object will be (array.length + 1)
+    console.log(questionsAndAnswers)
   }
 
   function storeQuestionInput(event) {
@@ -75,8 +76,8 @@ function App() {
   }
 
   function storeSubjectInput(event) {
-    console.log(event);
-    console.log(event.target.value)
+    // console.log(event);
+    // console.log(event.target.value)
     setSelectedSubject(event.target.value);
     console.log(selectedSubject);
   }
@@ -92,6 +93,7 @@ function App() {
         storeQuestionInput={storeQuestionInput}
         storeAnswerInput={storeAnswerInput}
         storeSubjectInput={storeSubjectInput}
+        addObject={()=>{addObject(selectedSubject, newQuestion, newAnswer)}}
       />
       {subjectList.map((item) => {
         return <SubjectCard subject={item} />;

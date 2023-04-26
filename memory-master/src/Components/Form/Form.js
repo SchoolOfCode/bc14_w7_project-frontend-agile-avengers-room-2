@@ -3,6 +3,7 @@ function Form({
   storeQuestionInput,
   storeAnswerInput,
   storeSubjectInput,
+  addObject
 }) {
   return (
     <div className="Form-div">
@@ -33,7 +34,7 @@ function Form({
         />
 
         {/* Submit button */}
-        <button type="submit">Submit</button>
+        <button type="submit" onClick={addObject}>Submit</button>
       </div>
     </div>
   );
