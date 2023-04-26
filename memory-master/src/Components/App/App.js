@@ -2,6 +2,7 @@ import "./App.css";
 import Form from "../Form/Form";
 import QuestionCard from "../QuestionCard/QuestionCard";
 import SubjectCard from "../SubjectCard/SubjectCard";
+import { useState } from "react";
 
 /* Plan for MVP
 - The user will be presented with a form in which they select from a list of hard-coded subjects, in which the subsequent flash cards will be grouped.
@@ -12,6 +13,7 @@ import SubjectCard from "../SubjectCard/SubjectCard";
 */
 
 const subjectList = [
+  //hard coded list of subjects
   "Computational Thinking",
   "JavaScript",
   "Testing",
@@ -23,7 +25,8 @@ const subjectList = [
   "TypeScript",
 ];
 
-const questionsAndAnswers = [
+const initialQuestionsAndAnswers = [
+  //hard coded questions and answers
   {
     key: 1,
     Subject: "React",
@@ -39,9 +42,25 @@ const questionsAndAnswers = [
 ];
 
 function App() {
+  //created state variables
+  const [questionsAndAnswers, setQuestionsAndAnswers] = useState(
+    initialQuestionsAndAnswers
+  );
+
+  // questionsAndAnswers is an array of objects, each object contains a question and answer, unique key, and subject
+  const [currentSubject, setCurrentSubject] = useState(""); //currentSubject is a string, which will be the subject of the current card being displayed
+  const [numberOfQuestions, setNumberOfQuestions] = useState(0); //May or may require this, as we can potentially find the number of cards in a specified subject using .length or similar methods. But it may be useful to have a count of the number of cards in a subject, so we can display it to the user.
+
+  //submit button
+  function addObjectButton() {
+    //gets what is in the text fields and appends to the questionsAndAnswers Array
+  }
+
+  //Components/PROPS to pass through
+  // questionsAndAnswers as this will contains array of objects whith Question, answers, id and subject. SubjectCard component and QuetionCard component
   return (
     <main>
-      <h1>Test</h1>
+      <h1>Memory Masters</h1>
       <Form subjectList={subjectList} />
       {subjectList.map((item) => {
         return <SubjectCard subject={item} />;
