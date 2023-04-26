@@ -57,7 +57,9 @@ function App() {
   }
 
   //Components/PROPS to pass through
-  // questionsAndAnswers as this will contains array of objects whith Question, answers, id and subject. SubjectCard component and QuetionCard component
+  // questionsAndAnswers as this will contains array of objects whith Question, answers, id and subject. SubjectCard component and QuetionCard component [...array]
+
+  //toDo: add an answer component
   return (
     <main>
       <h1>Memory Masters</h1>
