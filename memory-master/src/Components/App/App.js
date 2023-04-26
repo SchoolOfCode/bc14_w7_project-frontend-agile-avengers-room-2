@@ -87,26 +87,26 @@ function App() {
 
     setQuestionsAndAnswers(newArray);
     // The key of the new object will be (array.length + 1)
-    console.log(questionsAndAnswers);
+    // console.log(questionsAndAnswers);
 
     // To do: Call a function which clears the question and answer text areas.
   }
 
   function storeQuestionInput(event) {
     setNewQuestion(event.target.value);
-    console.log(newQuestion);
+    // console.log(newQuestion);
   }
 
   function storeAnswerInput(event) {
     setNewAnswer(event.target.value);
-    console.log(newAnswer);
+    // console.log(newAnswer);
   }
 
   function storeSubjectInput(event) {
     // console.log(event);
     // console.log(event.target.value)
     setSelectedSubject(event.target.value);
-    console.log(selectedSubject);
+    // console.log(selectedSubject);
   }
 
   function deleteObject(key, subject) {
@@ -115,8 +115,9 @@ function App() {
     // we will declare a new array and use .filter to determin whether the item has that key.
     // if it doesnt have that key then populate the new array
     // set questionsAndAnswers array to new array.
+    console.log(subject)
     let newArray = questionsAndAnswers.filter((item) => item.key !== key);
-    console.log(newArray);
+    // console.log(newArray);
     setQuestionsAndAnswers(newArray);
     
     //Now, run displayQuestion(subject) again.
@@ -131,14 +132,17 @@ function App() {
   function displayQuestion(subject) {
     // We are going to use filter() (questionAndAnswer.filter((item)=>{})) and we will store in a new array variable
     console.log(subject);
+    console.log(questionsAndAnswers)
     setFilteredArray(
       questionsAndAnswers.filter((item) => {
         if (item.Subject === subject) {
           return true;
         }
       })
+      
     );
-    console.log(filteredArray);
+    console.log(filteredArray)
+    // console.log(filteredArray);
     // return filteredArray;
     // Callback function will return if item.subject === subject
     // Result should be a filtered questionAndAnswer Array

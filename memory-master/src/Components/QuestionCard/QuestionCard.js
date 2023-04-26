@@ -7,7 +7,7 @@ function QuestionCard({ filteredArray, deleteObject }) {
   const [questionNum, setQuestionNum] = useState(0);
   const [revealAnswer, setRevealAnswer] = useState(false);
 
-  console.log(filteredArray);
+  // console.log(filteredArray);
   let filteredQuestion = "";
   let filteredAnswer = "";
   let filteredSubject = "";
