@@ -76,6 +76,7 @@ function App() {
 
   function storeSubjectInput(event) {
     console.log(event);
+    console.log(event.target.value)
     setSelectedSubject(event.target.value);
     console.log(selectedSubject);
   }
