@@ -29,7 +29,7 @@ const initialQuestionsAndAnswers = [
   //hard coded questions and answers
   {
     key: 1,
-    Subject: "React",
+    Subject: "React.js",
     Question: "What language do you use to create components in React?",
     Answer: "JSX",
   },
@@ -51,6 +51,7 @@ function App() {
   const [newQuestion, setNewQuestion] = useState("");
   const [newAnswer, setNewAnswer] = useState("");
   const [selectedSubject, setSelectedSubject] = useState(subjectList[0]);
+  const [filteredArray, setFilteredArray] = useState([]);
   //submit button
   function addObject(subject, question, answer) {
     //gets what is in the text fields and appends to the questionsAndAnswers Array
@@ -64,7 +65,7 @@ function App() {
     // The key of the new object will be (array.length + 1)
     console.log(questionsAndAnswers)
 
-    // Call a function which clears the question and answer text areas.
+    // To do: Call a function which clears the question and answer text areas.
   }
 
   function storeQuestionInput(event) {
@@ -87,6 +88,22 @@ function App() {
   // questionsAndAnswers as this will contains array of objects whith Question, answers, id and subject. SubjectCard component and QuetionCard component [...array]
 
   //toDo: add an answer component
+
+  function displayQuestion(subject){
+    // We are going to use filter() (questionAndAnswer.filter((item)=>{})) and we will store in a new array variable
+  console.log(subject);
+   setFilteredArray(questionsAndAnswers.filter((item)=>{
+      if (item.Subject === subject){
+       return true
+      }}));
+      console.log(filteredArray);
+    // return filteredArray;
+    // Callback function will return if item.subject === subject 
+    // Result should be a filtered questionAndAnswer Array
+    // Return new array and pass to QuestionCard as a prop 
+    // Inside QuestionCard.js we are going to display the first question (index[0])
+  }
+
   return (
     <main>
       <h1>Memory Masters</h1>
@@ -98,9 +115,9 @@ function App() {
         addObject={()=>{addObject(selectedSubject, newQuestion, newAnswer)}}
       />
       {subjectList.map((item) => {
-        return <SubjectCard subject={item} />;
+        return <SubjectCard subject={item} displayQuestion={displayQuestion} />;
       })}
-      <QuestionCard />
+      <QuestionCard filteredArray={filteredArray}/>
     </main>
   );
 }
