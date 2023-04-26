@@ -61,8 +61,8 @@ function App() {
   );
 
   // questionsAndAnswers is an array of objects, each object contains a question and answer, unique key, and subject
-  const [currentSubject, setCurrentSubject] = useState(""); //currentSubject is a string, which will be the subject of the current card being displayed
-  const [numberOfQuestions, setNumberOfQuestions] = useState(0); //May or may require this, as we can potentially find the number of cards in a specified subject using .length or similar methods. But it may be useful to have a count of the number of cards in a subject, so we can display it to the user.
+  // const [currentSubject, setCurrentSubject] = useState(""); //currentSubject is a string, which will be the subject of the current card being displayed
+  // const [numberOfQuestions, setNumberOfQuestions] = useState(0); //May or may require this, as we can potentially find the number of cards in a specified subject using .length or similar methods. But it may be useful to have a count of the number of cards in a subject, so we can display it to the user.
   const [newQuestion, setNewQuestion] = useState("");
   const [newAnswer, setNewAnswer] = useState("");
   const [selectedSubject, setSelectedSubject] = useState(subjectList[0]);
@@ -120,6 +120,7 @@ function App() {
     let newArray = questionsAndAnswers.filter((item) => item.key !== key);
     console.log(newArray);
     setQuestionsAndAnswers(newArray);
+    console.log(questionsAndAnswers)
 
     //update the state based on the previous state using the updater function
     // setQuestionsAndAnswers((filteredArray) => {
