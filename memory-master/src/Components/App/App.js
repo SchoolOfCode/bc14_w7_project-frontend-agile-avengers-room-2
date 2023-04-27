@@ -94,8 +94,8 @@ function App() {
     // console.log(questionsAndAnswers);
 
     // To do: Call a function which clears the question and answer text areas.
-    setNewQuestion("")
-    setNewAnswer("")
+    setNewQuestion("");
+    setNewAnswer("");
   }
 
   function storeQuestionInput(event) {

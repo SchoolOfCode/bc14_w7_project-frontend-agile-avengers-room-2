@@ -48,27 +48,26 @@ function QuestionCard({ filteredArray, deleteObject }) {
             <p className="Subject">Subject: {filteredSubject}</p>
           </div>
           <p className="Question-P">Question: {filteredQuestion}</p>
-          
+
           <div className="Delete-And-Answer-Button-Div">
-          <button
-            className="Delete-Button"
-            onClick={() => {
-              deleteObject(filteredKey, filteredSubject);
-              calculateNewQuestionNum();
-            }}
-          >
-            {" "}
-            Delete Question
-          </button>
-        
-          <button
-            className="Answer-Button"
-            onClick={() => setRevealAnswer(!revealAnswer)} //toggle to show answer
-          >
-            Reveal Answer
-          </button>
+            <button
+              className="Delete-Button"
+              onClick={() => {
+                deleteObject(filteredKey, filteredSubject);
+                calculateNewQuestionNum();
+              }}
+            >
+              {" "}
+              Delete Question
+            </button>
+
+            <button
+              className="Answer-Button"
+              onClick={() => setRevealAnswer(!revealAnswer)} //toggle to show answer
+            >
+              Reveal Answer
+            </button>
           </div>
-          
         </div>
 
         {revealAnswer && ( //if revealAnswer is true, show the answer
@@ -81,35 +80,39 @@ function QuestionCard({ filteredArray, deleteObject }) {
             <button className="Thumbs-Down"> 👎🏻</button>
           </div>
         )}
-            
       </div>
       <div className="outside-Next-and-Prev">
-              <div className="Next-and-Prev">
-                <button
-                  className="Previous-Card-Button"
-                  onClick={() => {
-                    setRevealAnswer(false);
-                    questionNum !== 0 && setQuestionNum(questionNum - 1);
-                  }}
-                >
-                  Previous Card
-                </button>
+        <div className="Next-and-Prev">
+          <button
+            className="Previous-Card-Button"
+            onClick={() => {
+              setRevealAnswer(false);
+              questionNum !== 0 && setQuestionNum(questionNum - 1);
+            }}
+          >
+            Previous Card
+          </button>
 
-                <p style={{ fontWeight: "bold" }}>
-                  {questionNum + 1} / {filteredArray.length}
-                </p>
-                <button
-                  className="Next-Card-Button"
-                  onClick={() => {
-                    setRevealAnswer(false);
-                    questionNum !== filteredArray.length - 1 &&
-                      setQuestionNum(questionNum + 1);
-                  }}
-                >
-                  Next Card
-                </button>
-              </div>
-            </div>
+          {/* if questionNum is 0 we dont want to display it */}
+
+          {questionNum + 1 <= filteredArray.length && (
+            <p style={{ fontWeight: "bold" }}>
+              {questionNum + 1} / {filteredArray.length}
+            </p>
+          )}
+
+          <button
+            className="Next-Card-Button"
+            onClick={() => {
+              setRevealAnswer(false);
+              questionNum !== filteredArray.length - 1 &&
+                setQuestionNum(questionNum + 1);
+            }}
+          >
+            Next Card
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
