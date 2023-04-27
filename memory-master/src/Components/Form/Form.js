@@ -1,9 +1,11 @@
+import memoryMasterlogo from "./memoryMasterlogo.png";
+
 function Form({
   subjectList,
   storeQuestionInput,
   storeAnswerInput,
   storeSubjectInput,
-  addObject
+  addObject,
 }) {
   return (
     <div className="Form-div">
@@ -34,8 +36,11 @@ function Form({
         />
 
         {/* Submit button */}
-        <button type="submit" onClick={addObject}>Submit</button>
+        <button type="submit" onClick={addObject}>
+          Submit
+        </button>
       </div>
+      <img src={memoryMasterlogo} alt="Memory-Master-Logo" />
     </div>
   );
 }
