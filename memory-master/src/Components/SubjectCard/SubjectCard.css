@@ -1,0 +1,9 @@
+.Subject-Card-div {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+  }
+
+.Subject-card {
+  margin: 10px;
+}

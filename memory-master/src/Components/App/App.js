@@ -3,6 +3,7 @@ import Form from "../Form/Form";
 import QuestionCard from "../QuestionCard/QuestionCard";
 import SubjectCard from "../SubjectCard/SubjectCard";
 import { useState, useEffect } from "react";
+import { Grid } from "@mui/material";
 
 /* Plan for MVP
 - The user will be presented with a form in which they select from a list of hard-coded subjects, in which the subsequent flash cards will be grouped.
@@ -55,16 +56,15 @@ const initialQuestionsAndAnswers = [
 ];
 
 function App() {
-  
   //created state variables
   const [questionsAndAnswers, setQuestionsAndAnswers] = useState(
     initialQuestionsAndAnswers
-    );
-    
-    useEffect(()=>{
-      displayQuestion(currentSubject);
-    }, [questionsAndAnswers])
-    
+  );
+
+  useEffect(() => {
+    displayQuestion(currentSubject);
+  }, [questionsAndAnswers]);
+
   // questionsAndAnswers is an array of objects, each object contains a question and answer, unique key, and subject
   const [currentSubject, setCurrentSubject] = useState(""); //currentSubject is a string, which will be the subject of the current card being displayed
   // const [numberOfQuestions, setNumberOfQuestions] = useState(0); //May or may require this, as we can potentially find the number of cards in a specified subject using .length or similar methods. But it may be useful to have a count of the number of cards in a subject, so we can display it to the user.
@@ -125,7 +125,7 @@ function App() {
     let newArray = questionsAndAnswers.filter((item) => item.key !== key);
     console.log(newArray);
     setQuestionsAndAnswers(newArray);
-    console.log(questionsAndAnswers)
+    console.log(questionsAndAnswers);
 
     //update the state based on the previous state using the updater function
     // setQuestionsAndAnswers((filteredArray) => {
@@ -166,19 +166,34 @@ function App() {
   return (
     <main>
       <h1>Memory Masters</h1>
-      <Form
-        subjectList={subjectList}
-        storeQuestionInput={storeQuestionInput}
-        storeAnswerInput={storeAnswerInput}
-        storeSubjectInput={storeSubjectInput}
-        addObject={() => {
-          addObject(selectedSubject, newQuestion, newAnswer);
-        }}
-      />
-      {subjectList.map((item) => {
-        return <SubjectCard setCurrentSubject={setCurrentSubject} subject={item} displayQuestion={displayQuestion} />;
-      })}
-      <QuestionCard filteredArray={filteredArray} deleteObject={deleteObject} />
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={4}>
+          <Form
+            subjectList={subjectList}
+            storeQuestionInput={storeQuestionInput}
+            storeAnswerInput={storeAnswerInput}
+            storeSubjectInput={storeSubjectInput}
+            addObject={() => {
+              addObject(selectedSubject, newQuestion, newAnswer);
+            }}
+          />
+        </Grid>
+        <Grid item xs={12} md={8} container spacing={2}>
+          {subjectList.map((item) => {
+            return (
+              <SubjectCard
+                setCurrentSubject={setCurrentSubject}
+                subject={item}
+                displayQuestion={displayQuestion}
+              />
+            );
+          })}
+          <QuestionCard
+            filteredArray={filteredArray}
+            deleteObject={deleteObject}
+          />
+        </Grid>
+      </Grid>
     </main>
   );
 }
