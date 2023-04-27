@@ -2,16 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   background-color: #282c34;
@@ -24,15 +14,54 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.main{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color : whitesmoke;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Form-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px #999;
+  height: 400px;
+  vertical-align: top;
+  width: 100%;
+  margin-left: 6px;
 }
+
+.Question-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px #999;
+  height: 400px;
+  vertical-align: top;
+}
+
+.Question-Card-div {
+  border: #282c34;
+  border-radius: 30%;
+  
+}
+.Answer-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px #999;
+  height: 400px;
+  vertical-align: top;
+}
+
+
+
