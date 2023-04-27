@@ -81,7 +81,9 @@ function QuestionCard({ filteredArray, deleteObject }) {
             <button className="Thumbs-Down"> 👎🏻</button>
           </div>
         )}
-            <div className="outside-Next-and-Prev">
+            
+      </div>
+      <div className="outside-Next-and-Prev">
               <div className="Next-and-Prev">
                 <button
                   className="Previous-Card-Button"
@@ -108,7 +110,6 @@ function QuestionCard({ filteredArray, deleteObject }) {
                 </button>
               </div>
             </div>
-      </div>
     </div>
   );
 }

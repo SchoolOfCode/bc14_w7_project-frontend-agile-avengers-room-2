@@ -83,6 +83,12 @@
   align-items: flex-end;
 } */
 
+.outside-Next-and-Prev{
+  /* When parent is a flex-box, margin-top: auto; on a child will push and keep the child at the bottom. */
+  margin-top: auto;
+  width: 80%;
+}
+
 .Next-and-Prev{
   display: flex;
   justify-content: space-between;
