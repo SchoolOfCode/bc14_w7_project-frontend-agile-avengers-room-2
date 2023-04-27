@@ -164,7 +164,7 @@ function App() {
 
   return (
     <main className="main">
-      <h1>Memory Masters</h1>
+      <h1>Memory Master</h1>
       <Grid container spacing={2}>
         <Grid item xs={12} md={4}>
           <Form
@@ -190,10 +190,10 @@ function App() {
             );
           })}
           <Grid item md={12}>
-          <QuestionCard
-            filteredArray={filteredArray}
-            deleteObject={deleteObject}
-          />
+            <QuestionCard
+              filteredArray={filteredArray}
+              deleteObject={deleteObject}
+            />
           </Grid>
         </Grid>
       </Grid>
