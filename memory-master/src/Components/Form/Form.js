@@ -6,6 +6,8 @@ function Form({
   storeAnswerInput,
   storeSubjectInput,
   addObject,
+  newQuestion,
+  newAnswer
 }) {
   return (
     <div className="Form-div">
@@ -23,6 +25,7 @@ function Form({
           style={{ resize: "none" }}
           type="text"
           className="question-input-field"
+          value={newQuestion}
           onChange={storeQuestionInput}
         />
 
@@ -32,6 +35,7 @@ function Form({
           style={{ resize: "none" }}
           type="text"
           className="answer-input-field"
+          value={newAnswer}
           onChange={storeAnswerInput}
         />
 
