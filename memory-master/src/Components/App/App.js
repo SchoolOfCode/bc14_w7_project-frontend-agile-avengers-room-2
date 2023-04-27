@@ -23,7 +23,6 @@ const subjectList = [
   "JS on the DOM",
   "Node and Express",
   "Databases and SQL",
-  "TypeScript",
 ];
 
 const initialQuestionsAndAnswers = [
@@ -181,11 +180,13 @@ function App() {
         <Grid item xs={12} md={8} container spacing={2}>
           {subjectList.map((item) => {
             return (
-              <SubjectCard
-                setCurrentSubject={setCurrentSubject}
-                subject={item}
-                displayQuestion={displayQuestion}
-              />
+              <Grid item xs={12} sm={6} md={4} lg={3}>
+                <SubjectCard
+                  setCurrentSubject={setCurrentSubject}
+                  subject={item}
+                  displayQuestion={displayQuestion}
+                />
+              </Grid>
             );
           })}
           <QuestionCard

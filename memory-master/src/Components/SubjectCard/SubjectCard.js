@@ -1,4 +1,3 @@
-
 /* - Set a hardcoded array for the subjects that we want to show within the SubjectCard 'tiles' (subjectList). This will be held in app.js.✅ 
 - For each item in the array, we want to return a button.✅ 
 - Use the .map() method to iterate over the subjectList array and output a SubjectCard component for each index. ✅ 
@@ -12,12 +11,51 @@
         // Display first question from the filtered array, in the question paragraph.
 */
 
+import {
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Button,
+  Typography,
+} from "@mui/material";
+import flashcard from "./flashcard.png";
 
-function SubjectCard ({subject, displayQuestion, setCurrentSubject}) {
-    return (
+function SubjectCard({ subject, displayQuestion, setCurrentSubject }) {
+  return (
     <div className="Subject-Card-div">
-    <button className="Subject-Button" onClick={()=>{setCurrentSubject(subject); displayQuestion(subject)}}>{subject}</button>
-
-    </div>)
+      <Card
+        className="Subject-Card"
+        style={{
+          padding: "2rem",
+          width: "200px",
+          border: "1px solid black",
+          height: "230px",
+        }}
+      >
+        <CardActionArea>
+          <CardMedia alt="flashcard" component="img" image={flashcard} />
+          <CardContent style={{ textAlign: "center" }}>
+            <Typography gutterBottom variant="h6" component="h6">
+              {subject}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions style={{ display: "flex", justifyContent: "center" }}>
+          <Button
+            size="medium"
+            color="primary"
+            onClick={() => {
+              setCurrentSubject(subject);
+              displayQuestion(subject);
+            }}
+          >
+            Question Me!
+          </Button>
+        </CardActions>
+      </Card>
+    </div>
+  );
 }
-export default SubjectCard
+export default SubjectCard;
