@@ -94,6 +94,8 @@ function App() {
     // console.log(questionsAndAnswers);
 
     // To do: Call a function which clears the question and answer text areas.
+    setNewQuestion("")
+    setNewAnswer("")
   }
 
   function storeQuestionInput(event) {
@@ -175,6 +177,8 @@ function App() {
             addObject={() => {
               addObject(selectedSubject, newQuestion, newAnswer);
             }}
+            newQuestion={newQuestion}
+            newAnswer={newAnswer}
           />
         </Grid>
         <Grid item xs={12} md={8} container spacing={2}>
