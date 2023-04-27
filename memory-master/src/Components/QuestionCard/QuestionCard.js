@@ -42,65 +42,72 @@ function QuestionCard({ filteredArray, deleteObject }) {
 
   return (
     <div className="Question-Card-Div">
-      <div className="Question-Div">
-        <p className="Question-P">Question: {filteredQuestion}</p>
-        <button
-          className="Delete-Button"
-          onClick={() => {
-            deleteObject(filteredKey, filteredSubject);
-            calculateNewQuestionNum();
-          }}
-        >
-          {" "}
-          Delete Question
-        </button>
-        <div className="Subject-And-Answer-Button-Div">
-          <p className="Subject">Subject: {filteredSubject}</p>
-
+      <div className="inside-Question-Card-Div">
+        <div className="Question-Div">
+          <div className="Subject-div">
+            <p className="Subject">Subject: {filteredSubject}</p>
+          </div>
+          <p className="Question-P">Question: {filteredQuestion}</p>
+          
+          <div className="Delete-And-Answer-Button-Div">
+          <button
+            className="Delete-Button"
+            onClick={() => {
+              deleteObject(filteredKey, filteredSubject);
+              calculateNewQuestionNum();
+            }}
+          >
+            {" "}
+            Delete Question
+          </button>
+        
           <button
             className="Answer-Button"
             onClick={() => setRevealAnswer(!revealAnswer)} //toggle to show answer
           >
             Reveal Answer
           </button>
+          </div>
+          
         </div>
-      </div>
 
-      {revealAnswer && ( //if revealAnswer is true, show the answer
-        <div className="Answer-Div">
-          <p className="Answer-P">Answer: {filteredAnswer}</p>
-          <p className="How-Did-You-Do">How did you do?</p>
+        {revealAnswer && ( //if revealAnswer is true, show the answer
+          <div className="Answer-Div">
+            <p className="Answer-P">Answer: {filteredAnswer}</p>
+            <p className="How-Did-You-Do">How did you do?</p>
 
-          <button className="Thumbs-Up"> 👍🏻</button>
-          <button className="Straight-Face"> 😐</button>
-          <button className="Thumbs-Down"> 👎🏻</button>
-        </div>
-      )}
+            <button className="Thumbs-Up"> 👍🏻</button>
+            <button className="Straight-Face"> 😐</button>
+            <button className="Thumbs-Down"> 👎🏻</button>
+          </div>
+        )}
+            <div className="outside-Next-and-Prev">
+              <div className="Next-and-Prev">
+                <button
+                  className="Previous-Card-Button"
+                  onClick={() => {
+                    setRevealAnswer(false);
+                    questionNum !== 0 && setQuestionNum(questionNum - 1);
+                  }}
+                >
+                  Previous Card
+                </button>
 
-      <div className="Next-and-Prev">
-        <button
-          className="Previous-Card-Button"
-          onClick={() => {
-            setRevealAnswer(false);
-            questionNum !== 0 && setQuestionNum(questionNum - 1);
-          }}
-        >
-          Previous Card
-        </button>
-
-        <p style={{ fontWeight: "bold" }}>
-          {questionNum + 1} / {filteredArray.length}
-        </p>
-        <button
-          className="Next-Card-Button"
-          onClick={() => {
-            setRevealAnswer(false);
-            questionNum !== filteredArray.length - 1 &&
-              setQuestionNum(questionNum + 1);
-          }}
-        >
-          Next Card
-        </button>
+                <p style={{ fontWeight: "bold" }}>
+                  {questionNum + 1} / {filteredArray.length}
+                </p>
+                <button
+                  className="Next-Card-Button"
+                  onClick={() => {
+                    setRevealAnswer(false);
+                    questionNum !== filteredArray.length - 1 &&
+                      setQuestionNum(questionNum + 1);
+                  }}
+                >
+                  Next Card
+                </button>
+              </div>
+            </div>
       </div>
     </div>
   );

@@ -189,10 +189,12 @@ function App() {
               </Grid>
             );
           })}
+          <Grid item md={12}>
           <QuestionCard
             filteredArray={filteredArray}
             deleteObject={deleteObject}
           />
+          </Grid>
         </Grid>
       </Grid>
     </main>

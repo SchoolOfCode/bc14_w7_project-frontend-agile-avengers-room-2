@@ -6,11 +6,11 @@
 }
 
 
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -19,7 +19,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: --var(white);
-}
+} */
 
 .main {
   display: flex;
@@ -43,7 +43,7 @@
   margin-left: 6px;
 }
 
-.Question-div {
+/* .Question-Div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,15 +52,14 @@
   box-shadow: 2px 2px 5px #999;
   height: 400px;
   vertical-align: top;
-}
+} */
 
-
-.Question-Card-div { 
+/* .Question-Card-div { 
   border: #282c34;
   border-radius: 30%;
-  
-}
-.Answer-div {
+} */
+
+/* .Answer-div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,44 +68,52 @@
   box-shadow: 2px 2px 5px #999;
   height: 400px;
   vertical-align: top;
-}
-
-
-.Question-Card-Div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px;
-  border: 1px solid #d8d8d8;
-  box-shadow: 2px 2px 5px #d8d8d8;
-  height: 400px;
-  vertical-align: top;
-  background-color: #fff;
-}
+} */
 
 .Question-P {
   font-weight: bold;
   font-size: 20px;
-  margin-top: 20px;
+  margin-top: 5px;
   margin-bottom: 10px;
 }
 
-.Subject-And-Answer-Button-Div {
+/* .outside-Next-and-Prev{
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+} */
+
+.Next-and-Prev{
   display: flex;
   justify-content: space-between;
+  justify-self: baseline;
+  width: 100%;
+  margin-top: 20%;
+}
+
+/* .Subject-And-Answer-Button-Div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
+} */
+
+.Subject-div{
+  display: flex;
+  justify-content: flex-end;
 }
 
 .Subject {
   font-size: 16px;
   margin-left: 10px;
+  /* align-self: flex-end; */
 }
 
 .Answer-Button {
   background-color: lightskyblue;
-  color: #fff;
+  color: var(--dark-blue);
   border: none;
   border-radius: 4px;
   padding: 5px 10px;
@@ -163,7 +170,7 @@
 .Previous-Card-Button,
 .Next-Card-Button {
   background-color: lightskyblue;
-  color: #fff;
+  color: var(--dark-blue);
   border: none;
   border-radius: 4px;
   padding: 5px 10px;
@@ -176,21 +183,24 @@
   background-color: --var(dark-blue);
 }
 
-.Question-Input-Field,
-.Answer-Input-Field {
+.question-input-field,
+.answer-input-field {
+  /* display: block; */
+  max-width: 92.5%;
   border: 1px solid;
-  border-radius: 40%;
+  border-radius: 4%;
 }
 
-header {
+/* header {
   background-color: --var(dark-blue);
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 h1 {
+  /* font-family: Roboto; */
   font-size: 2.5rem;
   color: black;
   margin: 0;
@@ -203,23 +213,26 @@ h3 {
 }
 
 label {
+  align-self: flex-start;
+  margin-left: 5px;
   font-size: 1.4rem;
   color: black;
   margin-right: 10px;
 }
 
 select {
+  width: 96%;
   font-size: 1.4rem;
   color: black;
   border: 1px solid #ddd;
   padding: 5px;
   margin-bottom: 20px;
-  width: 100%;
 }
 
 .question-answer-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
 }
 
@@ -246,7 +259,7 @@ button[type="submit"] {
   color: --white;
   background-color: lightskyblue;
   border: none;
-  border-radius: 4%;
+  border-radius: 12px;
   padding: 10px;
   cursor: pointer;
   width: 100%;
@@ -272,20 +285,53 @@ button[type="submit"] {
 .Subject-Card-Div:hover {
   transform: translateY(-10px);
   box-shadow: 2px 2px 10px #ddd;
+  /* border-radius: 100%; */
 }
 
-.Subject-Title {
+/* .Subject-Title {
   font-size: 1.8rem;
   color: #1e88e5;
   margin: 0;
-}
+} */
+
+/* .Question-Card-Div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  /* border: 1px solid #d8d8d8; */
+  /* box-shadow: 2px 2px 5px #d8d8d8; */
+  /* height: 400px; */
+  /* vertical-align: top;
+  background-color: #fff;
+} */
 
 .Question-Card-Div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border: 2px solid #2196f3;
   border-radius: 10px;
   margin: 10px;
   padding: 10px;
+  height: 400px;
   box-shadow: 2px 2px 5px #ccc;
   font-family: 'Helvetica Neue', sans-serif;
   color: #333;
+  vertical-align: top;
+  background-color: #fff;
+}
+
+.inside-Question-Card-Div{
+  width: 80%;
+}
+
+.Question-Div {
+  width: 100%;
+}
+
+.Delete-And-Answer-Button-Div{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
