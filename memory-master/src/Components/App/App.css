@@ -1,0 +1,357 @@
+:root {
+  --blue: #A8BFE1;
+  --white: #f5f5f5;
+  --grey:#C4CAD0;
+  --dark-blue:#001242;
+  --main-font-color:#fbf1f1;
+  background-color: var(--dark-blue);
+}
+
+
+/* .App {
+  text-align: center;
+} */
+
+/* .App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: --var(white);
+} */
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: var(--dark-blue);
+}
+
+.Form-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px #999;
+  height: 400px;
+  vertical-align: top;
+  width: 100%;
+  margin-left: 6px;
+}
+
+/* .Question-Div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px #999;
+  height: 400px;
+  vertical-align: top;
+} */
+
+/* .Question-Card-div { 
+  border: #282c34;
+  border-radius: 30%;
+} */
+
+/* .Answer-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px #999;
+  height: 400px;
+  vertical-align: top;
+} */
+
+.Question-P {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* .outside-Next-and-Prev{
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+} */
+
+.outside-Next-and-Prev{
+  /* When parent is a flex-box, margin-top: auto; on a child will push and keep the child at the bottom. */
+  margin-top: auto;
+  width: 80%;
+}
+
+.Next-and-Prev{
+  display: flex;
+  justify-content: space-between;
+  justify-self: baseline;
+  width: 100%;
+  margin-top: 30px;
+}
+
+/* .Subject-And-Answer-Button-Div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+} */
+
+.Subject-div{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Subject {
+  font-size: 16px;
+  margin-left: 10px;
+  /* align-self: flex-end; */
+}
+
+.Answer-Button {
+  background-color: lightskyblue;
+  color: var(--dark-blue);
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.Answer-Button:hover {
+  background-color: #2d74bb;
+  color: var(--main-font-color);
+}
+
+.Answer-P {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.How-Did-You-Do {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.Thumbs-Up,
+.Straight-Face,
+.Thumbs-Down {
+  background-color: #d8d8d8;
+  color: #333;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.Thumbs-Up:hover,
+.Straight-Face:hover,
+.Thumbs-Down:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.Delete-Button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.Delete-Button:hover {
+  background-color: #bb2d3b;
+}
+
+.Previous-Card-Button,
+.Next-Card-Button {
+  background-color: lightskyblue;
+  color: var(--dark-blue);
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.Previous-Card-Button:hover,
+.Next-Card-Button:hover {
+  background-color: #2d74bb;
+    color: var(--main-font-color);
+  }
+
+.question-input-field,
+.answer-input-field {
+  /* display: block; */
+  max-width: 92.5%;
+  border: 1px solid;
+  border-radius: 4%;
+}
+
+/* header {
+  background-color: --var(dark-blue);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+h1 {
+  /* font-family: Roboto; */
+  font-size: 2.5rem;
+  color: var(--main-font-color);
+  margin: 0;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: var(--main-font-color);
+  margin: 0 0 20px 0;
+}
+
+label {
+  align-self: flex-start;
+  margin-left: 5px;
+  font-size: 1.4rem;
+  color: var(--main-font-color);
+  margin-right: 10px;
+}
+
+select {
+  width: 96%;
+  font-size: 1.4rem;
+  color: black;
+  border: 1px solid #ddd;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.question-answer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.question-label,
+.answer-label {
+  font-size: 1.4rem;
+  color: var(--main-font-color);
+  margin-bottom: 10px;
+}
+
+.question-input-field,
+.answer-input-field {
+  font-size: 1.4rem;
+  color: black;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  resize: none;
+}
+
+.submit-button{
+  font-size: 1.6rem;
+  color: --white;
+  background-color: lightskyblue;
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.submit-button:hover {
+  transform: translateY(-10px);
+  box-shadow: 2px 2px 10px #ddd;
+  /* border-radius: 100%; */
+}
+
+.Subject-Card-Div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px;
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 5px #ddd;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.Subject-Card-Div:hover {
+  transform: translateY(-10px);
+  box-shadow: 2px 2px 10px #ddd;
+  /* border-radius: 100%; */
+}
+
+/* .Subject-Title {
+  font-size: 1.8rem;
+  color: #1e88e5;
+  margin: 0;
+} */
+
+/* .Question-Card-Div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  /* border: 1px solid #d8d8d8; */
+  /* box-shadow: 2px 2px 5px #d8d8d8; */
+  /* height: 400px; */
+  /* vertical-align: top;
+  background-color: #fff;
+} */
+
+.Question-Card-Div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #2196f3;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  height: 400px;
+  box-shadow: 2px 2px 5px #ccc;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #333;
+  vertical-align: top;
+  background-color: #fff;
+}
+
+.inside-Question-Card-Div{
+  width: 80%;
+}
+
+.Question-Div {
+  width: 100%;
+}
+
+.Delete-And-Answer-Button-Div{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
