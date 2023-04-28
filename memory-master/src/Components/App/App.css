@@ -3,6 +3,8 @@
   --white: #f5f5f5;
   --grey:#C4CAD0;
   --dark-blue:#001242;
+  --main-font-color:#fbf1f1;
+  background-color: var(--dark-blue);
 }
 
 
@@ -27,7 +29,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background-color: --var(white);
+  background-color: var(--dark-blue);
 }
 
 .Form-div {
@@ -121,6 +123,11 @@
   cursor: pointer;
 }
 
+.Answer-Button:hover {
+  background-color: #2d74bb;
+  color: var(--main-font-color);
+}
+
 .Answer-P {
   font-weight: bold;
   font-size: 20px;
@@ -180,8 +187,9 @@
 
 .Previous-Card-Button:hover,
 .Next-Card-Button:hover {
-  background-color: --var(dark-blue);
-}
+  background-color: #2d74bb;
+    color: var(--main-font-color);
+  }
 
 .question-input-field,
 .answer-input-field {
@@ -202,13 +210,13 @@
 h1 {
   /* font-family: Roboto; */
   font-size: 2.5rem;
-  color: black;
+  color: var(--main-font-color);
   margin: 0;
 }
 
 h3 {
   font-size: 1.8rem;
-  color: black;
+  color: var(--main-font-color);
   margin: 0 0 20px 0;
 }
 
@@ -216,7 +224,7 @@ label {
   align-self: flex-start;
   margin-left: 5px;
   font-size: 1.4rem;
-  color: black;
+  color: var(--main-font-color);
   margin-right: 10px;
 }
 
@@ -239,7 +247,7 @@ select {
 .question-label,
 .answer-label {
   font-size: 1.4rem;
-  color: black;
+  color: var(--main-font-color);
   margin-bottom: 10px;
 }
 
@@ -254,7 +262,7 @@ select {
   resize: none;
 }
 
-button[type="submit"] {
+.submit-button{
   font-size: 1.6rem;
   color: --white;
   background-color: lightskyblue;
@@ -264,6 +272,12 @@ button[type="submit"] {
   cursor: pointer;
   width: 100%;
   margin-top: 20px;
+}
+
+.submit-button:hover {
+  transform: translateY(-10px);
+  box-shadow: 2px 2px 10px #ddd;
+  /* border-radius: 100%; */
 }
 
 .Subject-Card-Div {

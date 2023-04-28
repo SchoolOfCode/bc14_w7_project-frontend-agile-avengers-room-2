@@ -36,7 +36,7 @@ function Form({
         />
 
         {/* Submit button */}
-        <button type="submit" onClick={addObject}>
+        <button className="submit-button" type="submit" onClick={addObject}>
           Submit
         </button>
       </div>
