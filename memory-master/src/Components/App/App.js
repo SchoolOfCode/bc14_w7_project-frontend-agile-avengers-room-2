@@ -52,6 +52,134 @@ const initialQuestionsAndAnswers = [
     Question: "What is an array?",
     Answer: "stores data",
   },
+  {
+    key: 5,
+    Subject: "Computational Thinking",
+    Question: "What is an algorithm?",
+    Answer: "A set of instructions to solve a problem",
+  },
+  {
+    key: 6,
+    Subject: "Computational Thinking",
+    Question: "What is a variable?",
+    Answer: "A way to store data",
+  },
+  {
+    key: 7,
+    Subject: "Computational Thinking",
+    Question: "What is computational thinking?",
+    Answer:
+      "Computational thinking is using techniques to help us solve complex problems. Programming is giving instructions to a computer.",
+  },
+  {
+    key: 8,
+    Subject: "Javascript",
+    Question: "What is a function?",
+    Answer: "A block of code that can be called",
+  },
+  {
+    key: 9,
+    Subject: "Testing",
+    Question: "What is TDD?",
+    Answer: "Test Driven Development",
+  },
+  {
+    key: 10,
+    Subject: "Testing",
+    Question: "What is a unit test?",
+    Answer: "A test that tests a small unit of code",
+  },
+  {
+    key: 11,
+    Subject: "React.js",
+    Question: "What is a component?",
+    Answer: "A reusable piece of code",
+  },
+  {
+    key: 12,
+    Subject: "React.js",
+    Question: "What is a prop?",
+    Answer: "A way to pass data between components",
+  },
+  {
+    key: 13,
+    Subject: "React.js",
+    Question: "What is a state?",
+    Answer: "A way to store data in React",
+  },
+  {
+    key: 14,
+    Subject: "APIs",
+    Question: "What is an API?",
+    Answer: "Application Programming Interface",
+  },
+  {
+    key: 15,
+    Subject: "APIs",
+    Question: "What is a GET request?",
+    Answer: "A request to get data from an API",
+  },
+  {
+    key: 16,
+    Subject: "APIs",
+    Question: "What is a POST request?",
+    Answer: "A request to post data to an API",
+  },
+  {
+    key: 17,
+    Subject: "JS on the DOM",
+    Question: "What is the DOM?",
+    Answer: "Document Object Model",
+  },
+  {
+    key: 18,
+    Subject: "JS on the DOM",
+    Question: "What is an event listener?",
+    Answer: "A way to listen for events",
+  },
+  {
+    key: 19,
+    Subject: "JS on the DOM",
+    Question: "What is an event handler?",
+    Answer: "A function that handles an event",
+  },
+  {
+    key: 20,
+    Subject: "Node and Express",
+    Question: "What is Node.js?",
+    Answer: "A runtime environment for Javascript",
+  },
+  {
+    key: 21,
+    Subject: "Node and Express",
+    Question: "What is Express.js?",
+    Answer: "A framework for Node.js",
+  },
+  {
+    key: 22,
+    Subject: "Databases and SQL",
+    Question: "What is a database?",
+    Answer: "A place to store data",
+  },
+  {
+    key: 23,
+    Subject: "Databases and SQL",
+    Question: "What is SQL?",
+    Answer: "Structured Query Language",
+  },
+  {
+    key: 24,
+    Subject: "Databases and SQL",
+    Question: "What is a table?",
+    Answer: "A way to store data in a database",
+  },
+
+  {
+    key: 25,
+    Subject: "Node and Express",
+    Question: "What is a server?",
+    Answer: "A computer that serves data",
+  },
 ];
 
 function App() {
@@ -94,8 +222,8 @@ function App() {
     // console.log(questionsAndAnswers);
 
     // To do: Call a function which clears the question and answer text areas.
-    setNewQuestion("")
-    setNewAnswer("")
+    setNewQuestion("");
+    setNewAnswer("");
   }
 
   function storeQuestionInput(event) {
@@ -144,8 +272,6 @@ function App() {
 
   //Components/PROPS to pass through
   // questionsAndAnswers as this will contains array of objects whith Question, answers, id and subject. SubjectCard component and QuetionCard component [...array]
-
-  //toDo: add an answer component
 
   function displayQuestion(subject) {
     // We are going to use filter() (questionAndAnswer.filter((item)=>{})) and we will store in a new array variable

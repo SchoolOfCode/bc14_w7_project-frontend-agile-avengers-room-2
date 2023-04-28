@@ -7,7 +7,7 @@ function Form({
   storeSubjectInput,
   addObject,
   newQuestion,
-  newAnswer
+  newAnswer,
 }) {
   return (
     <div className="Form-div">
