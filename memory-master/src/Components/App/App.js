@@ -166,7 +166,7 @@ function App() {
 
   return (
     <main className="main">
-      <h1>Memory Master</h1>
+      <h1>🧠 Memory Master 🧠</h1>
       <Grid container spacing={2}>
         <Grid item xs={12} md={4}>
           <Form
